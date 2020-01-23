@@ -1,3 +1,8 @@
+## Run on Google cloud
+
+[![Run on Google Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run)
+
+
 ## Create and activate a virtual env:
 
     virtualenv -p python3 env-assignment
