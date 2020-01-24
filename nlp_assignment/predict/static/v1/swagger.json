@@ -1,0 +1,82 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "0.0.1",
+        "title": "Distaster Predictor API",
+        "description": "REST interface to interact with an NLP model",
+        "contact": {
+            "name": "API Team"
+        }
+    },
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/predict?text=": {
+            "get": {
+                "description": "Predict disaster scenario for an aribtrary string.",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "text",
+                        "type": "string",
+                        "required": true,
+                        "description": "Input text"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "$ref": "#/definitions/Prediction"
+                        }
+                    },
+                    "default": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Prediction": {
+            "type": "object",
+            "required": [
+                "text",
+                "prediction"
+            ],
+            "properties": {
+                "text": {
+                    "type": "string"
+                },
+                "prediction": {
+                    "type": "string"
+                }
+            }
+        },
+        "Error": {
+            "type": "object",
+            "required": [
+                "code",
+                "message"
+            ],
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

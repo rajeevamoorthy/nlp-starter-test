@@ -1,0 +1,10 @@
+Name                                               Stmts   Miss Branch BrPart  Cover   Missing
+----------------------------------------------------------------------------------------------
+nlp_assignment/predict/falcon_app.py                  12     12      0      0     0%   1-42
+nlp_assignment/predict/nlp_disaster_predictor.py      21      0      0      0   100%
+nlp_assignment/predict/predict_api.py                 11     11      0      0     0%   1-22
+nlp_assignment/sqlite_decode_script.py                15     15      4      0     0%   1-20
+nlp_assignment/train/nlp_disaster_classifier.py       41      1      2      1    95%   96, 93->96
+nlp_assignment/utils/nlp_pipeline.py                  27      0      2      0   100%
+----------------------------------------------------------------------------------------------
+TOTAL                                                127     39      8      1    67%

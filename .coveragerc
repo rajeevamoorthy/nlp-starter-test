@@ -1,0 +1,14 @@
+[run]
+branch = true
+omit =
+    */tests/*
+    */__init__.py
+source =
+    nlp_assignment
+
+[report]
+show_missing = False
+exclude_lines =
+    raise NotImplementedError
+    pragma: no cover
+fail_under = 80

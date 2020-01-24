@@ -1,21 +1,22 @@
-import falcon, json
-from nlp_disaster_predictior import NLPDisasterPredictor
+import falcon
+from falcon import uri
+
+from nlp_disaster_predictor import NLPDisasterPredictor
 
 class PredictApi:
+    """ """
 
-    def on_post(self, req, resp):
-        """Handles POST requests"""
+    def on_get(self, req, resp):
+        """ """
         predict = NLPDisasterPredictor()
 
-        data = req.media
+        qs = uri.parse_query_string(req.query_string)
+        text = qs.get('text')
 
         resonse_body = {
-            'input text': data["input"],
-            'prediction': predict.predict(data["input"])
+            'text': text,
+            'prediction': predict.predict(text)
         }
 
         resp.media = resonse_body
         resp.status = falcon.HTTP_200
-
-api = falcon.API()
-api.add_route('/predict', PredictApi())
