@@ -11,4 +11,4 @@ show_missing = False
 exclude_lines =
     raise NotImplementedError
     pragma: no cover
-fail_under = 80
+fail_under = 30
