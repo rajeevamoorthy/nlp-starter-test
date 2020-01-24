@@ -5,6 +5,8 @@ services:
   web:
     build: .
     image: web
+    environment:
+      - PORT=8000
     container_name: web
     ports:
       - 8000:8000
