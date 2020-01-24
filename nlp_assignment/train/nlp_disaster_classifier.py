@@ -49,7 +49,7 @@ class NLPDisasterClassifier:
         precision = precision_score(y_expected, y_predicted, pos_label=None, average='weighted')
         recall = recall_score(y_expected, y_predicted, pos_label=None, average='weighted')
 
-        print(f'precision = {precision:.3f}, recall = {recall:.3f}')
+        # print(f'precision = {precision:.3f}, recall = {recall:.3f}')
         return precision, recall  # Use this in test
 
     def train(self, data_corpus=None, save_model=True):

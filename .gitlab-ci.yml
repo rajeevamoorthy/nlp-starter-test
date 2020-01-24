@@ -3,6 +3,7 @@ image: python:latest
 
 stages:
     - test
+    - run
 
 before_script:
     - echo "before script"
@@ -17,9 +18,13 @@ test:
     script:
         - echo "testing"
         - python -m coverage run -m unittest discover -s tests -t nlp_assignment
-        - coverage report > coverage.report
-        - flake8 -q > flake8.report
+        - coverage report
+        - flake8
 
+run:
+    stage: run
+    script:
+        - python nlp_assignment/training_script.py
 
 # # Official language image. Look for the different tagged releases at:
 # # https://hub.docker.com/r/library/python/tags/
