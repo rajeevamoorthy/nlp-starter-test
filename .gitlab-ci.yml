@@ -2,18 +2,15 @@ image: python:latest
 
 
 stages:
-    - build
     - test
 
-build:
-    stage: build
-    script:
-        - echo "building"
-        - python -V  # Print out python version for debugging
-        - pip install virtualenv
-        - virtualenv venv
-        - source venv/bin/activate
-        - pip install -r requirements.txt
+before_script:
+    - echo "before script"
+    - python -V  # Print out python version for debugging
+    - pip install virtualenv
+    - virtualenv venv
+    - source venv/bin/activate
+    - pip install -r requirements.txt
 
 test:
     stage: test
