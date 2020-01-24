@@ -2,7 +2,7 @@ import falcon
 from falcon_swagger_ui import register_swaggerui_app
 import pathlib
 
-from predict_api import PredictApi
+from nlp_assignment.predict.predict_api import PredictApi
 
 app = falcon.API()
 app.add_route('/predict', PredictApi())

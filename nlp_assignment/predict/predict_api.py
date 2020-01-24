@@ -1,7 +1,7 @@
 import falcon
 from falcon import uri
 
-from nlp_disaster_predictor import NLPDisasterPredictor
+from nlp_assignment.predict.nlp_disaster_predictor import NLPDisasterPredictor
 
 class PredictApi:
     """ """
