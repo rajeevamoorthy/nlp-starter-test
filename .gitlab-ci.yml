@@ -16,9 +16,9 @@ test:
     stage: test
     script:
         - echo "testing"
-        - coverage report > coverage.report
-        - flake8 -q > flake8.stat
         - python -m coverage run -m unittest discover -s tests -t nlp_assignment
+        - coverage report > coverage.report
+        - flake8 -q > flake8.report
 
 
 # # Official language image. Look for the different tagged releases at:
