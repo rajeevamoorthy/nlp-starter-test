@@ -10,7 +10,9 @@ class NLPDisasterPredictor:
     """ """
 
     def __init__(self):
-        """ """
+        """
+        Read trained model from persistant storage
+        """
         working_dir = os.path.dirname(os.path.realpath(__file__))
         self.parent_dir = os.path.dirname(working_dir)
 
@@ -23,7 +25,9 @@ class NLPDisasterPredictor:
 
 
     def predict(self, text):
-        """ """
+        """
+        API for predict service.
+        """
 
         sample = pd.DataFrame([[text]], columns=['text'])
         sample = self.pipeline.clean(sample, 'text')

@@ -4,6 +4,8 @@ import pathlib
 
 from nlp_assignment.predict.predict_api import PredictApi
 
+""" Initialization script for webservice"""
+
 app = falcon.API()
 app.add_route('/predict', PredictApi())
 

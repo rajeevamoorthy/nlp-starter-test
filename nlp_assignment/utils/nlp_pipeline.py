@@ -6,15 +6,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 
 class NLPPipeline:
-    """
-    Each step in the model generation pipeline is implemented as a method in this class to allow for extendability.
-    - read data (multiple sources)
-    - clean ( any number of )
-    - tokenize input strings into component pieces (words)
-    - Feature extraction
-    - choose classifier and fit model
-    - pickle and save model to disk
-    """
+    """ """
 
     def __init__(self):
         """ """
@@ -48,8 +40,8 @@ class NLPPipeline:
         """
         Input: Trained classifier model
         Output: None
-        - Backup the previous model (if it exists)
-        - Save current model as a pickled
+        - Ideally, Backup the previous model (if it exists)
+        - Save current model as a pickled file
         """
         model_pickle = self.parent_dir + '/' + model_name
 
@@ -66,7 +58,10 @@ class NLPPipeline:
         return None
 
     def load_model(self, model_name):
-        """ """
+        """
+        Input: model name;
+        Output: a python object with model and any associated data.
+        """
         model_pickle = self.parent_dir + '/' + model_name
 
         with open(model_pickle, 'rb') as in_file:

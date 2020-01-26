@@ -12,18 +12,12 @@ from utils.nlp_pipeline import NLPPipeline
 from config import params
 
 class NLPDisasterClassifier:
-    """
-    Each step in the model generation pipeline is implemented as a method in this class to allow for extendability.
-    - read data (multiple sources)
-    - clean ( any number of )
-    - tokenize input strings into component pieces (words)
-    - Feature extraction
-    - choose classifier and fit model
-    - pickle and save model to disk
-    """
+    """"""
 
     def __init__(self):
-        """ """
+        """
+        Note code duplication. One should strive to achieve balance between duplication vs rapid prototyping.
+        """
         working_dir = os.path.dirname(os.path.realpath(__file__))
         self.parent_dir = os.path.dirname(working_dir)
 
@@ -56,11 +50,10 @@ class NLPDisasterClassifier:
         """ Training pipeline
         - read data
         - clean
-        - tokenize
         - split inputs into test/train data sets
         - Feature extraction
-        - choose a classifier and fit()
-        - Serialize model and save to disk
+        - Fit a model
+        - Serialize model and persist to disk
 
         - takes an arbitrary data_corpus (useful for testing with known dataset)
         """
